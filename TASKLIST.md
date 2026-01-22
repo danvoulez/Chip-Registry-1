@@ -3,21 +3,23 @@
 Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
 
 ## 1) Project Scaffolding & Tooling
+
 - ✅ Next.js 15 App Router structure with main routes (`/create`, `/explore`, `/compare`, `/mint`, `/focus`, `/status`, `/updates`).
 - ✅ Global layout, providers, and base theme tokens wired to Tailwind.
 - ✅ Core folders created: app, components, lib, stores, hooks.
 - ✅ Mock API routes for runs plan/execute/events, receipts, explore.
 - 🟨 Linting/formatting
   - ✅ Base configs present (TypeScript, Tailwind, PostCSS).
-  - ⬜️ Add explicit ESLint config file.
-  - ⬜️ Add explicit Prettier config file.
-  - ⬜️ Add lint/format scripts and document usage.
-- ⬜️ `pnpm` lockfile and scripts verified in CI.
-- ⬜️ Dev tooling
-  - ⬜️ Add Husky/lint-staged hooks for formatting.
-  - ⬜️ Add VSCode workspace settings for formatting + Tailwind.
+  - ✅ Add explicit ESLint config file.
+  - ✅ Add explicit Prettier config file.
+  - ✅ Add lint/format scripts and document usage.
+- ✅ `pnpm` lockfile and scripts verified in CI.
+- ✅ Dev tooling
+  - ✅ Add Husky/lint-staged hooks for formatting.
+  - ✅ Add VSCode workspace settings for formatting + Tailwind.
 
 ## 2) Design System & UI Foundations
+
 - ✅ Dark cryptographic theme CSS variables + Tailwind mapping.
 - ✅ UI primitives shipped
   - ✅ `CidPill`
@@ -41,33 +43,36 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
 - ⬜️ Consistent motion tokens (transition durations, easing curves).
 
 ## 3) Core Domain Types & Utilities
+
 - ✅ Core types (`CidStr`, `RunEvent`, `ReceiptExpanded`, etc.).
 - ✅ Utility formatters and CID abbreviation helpers.
 - ✅ Run reducer with event handling + idempotent event CID tracking.
 - 🟨 `prettyCanon` hardening
   - ✅ Basic decoding in place.
-  - ⬜️ Guard against invalid base64 (no throw).
-  - ⬜️ Avoid console logging in formatter.
+  - ✅ Guard against invalid base64 (no throw).
+  - ✅ Avoid console logging in formatter.
 - ⬜️ Canon/JSON inspectors
   - ⬜️ Canon bytes viewer component.
   - ⬜️ JSON inspector with collapse/expand.
   - ⬜️ Copy affordances for raw canon + formatted JSON.
 
 ## 4) State Management (Zustand) & React Query
+
 - ✅ Stores
   - ✅ Run store.
   - ✅ Compare store.
   - ✅ Workbench store stub.
 - ✅ React Query provider and hooks for receipt/explore.
 - 🟨 Missing query hooks
-  - ⬜️ `useWorlds` hook.
-  - ⬜️ `useChips` hook.
-  - ⬜️ Caching policies (stale time, retries, error boundaries).
+  - ✅ `useWorlds` hook.
+  - ✅ `useChips` hook.
+  - ✅ Caching policies (stale time, retries, error boundaries).
 - ⬜️ Compare store UI integration beyond simple toggles.
 - ⬜️ Optimistic favorite receipt handling + rollback on API error.
 - ⬜️ Centralized error handling (ApiError adapter + toast integration).
 
 ## 5) Create Page (Plan → Execute → SSE)
+
 - ✅ Omnibox UI inputs + Plan/Execute logic wired to mock endpoints.
 - ✅ CandidateGrid 2×2 layout (responsive).
 - ✅ SSE hook connects to mock stream and updates candidates.
@@ -84,6 +89,7 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
 - ⬜️ Candidate action overflow menu (replay, open receipt, compare).
 
 ## 6) Explore Page
+
 - ✅ Filter bar and receipt grid with pagination.
 - ✅ Receipt card actions: open, compare, replay, favorite (stubbed).
 - 🟨 Grid performance
@@ -98,6 +104,7 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
 - ⬜️ Empty state for no results + clear filters CTA.
 
 ## 7) Compare Page
+
 - ✅ Two-receipt comparison flow and metric deltas table.
 - ✅ Output diff mode toggles UI.
 - ⬜️ Determinism delta and proof summary widgets.
@@ -106,6 +113,7 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
 - ⬜️ Export comparison summary (CSV/JSON).
 
 ## 8) Focus Page
+
 - ✅ ReceiptViz hero + core proof pills + metrics strip + inspector drawer.
 - 🟨 Proof pills
   - ✅ Core proof pills exist.
@@ -119,6 +127,7 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
 - ⬜️ Related receipts sidebar (same world/chip).
 
 ## 9) Mint Page
+
 - ✅ Step wizard skeleton + manifest editor.
 - 🟨 API wiring
   - ⬜️ Conference step.
@@ -132,6 +141,7 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
 - ⬜️ Draft persistence and resume flow.
 
 ## 10) Mock API Coverage
+
 - ✅ `/api/mock/runs/plan`
 - ✅ `/api/mock/runs/execute`
 - ✅ `/api/mock/runs/:runId/events` (SSE)
@@ -144,19 +154,21 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
   - ⬜️ `actions/remix`
   - ⬜️ `actions/battle_test`
 - ⬜️ Query endpoints
-  - ⬜️ `worlds`
-  - ⬜️ `chips`
+  - ✅ `worlds`
+  - ✅ `chips`
   - ⬜️ `mint/*`
   - ⬜️ `aliases/set`
 - ⬜️ Gating denied path (`gate.allowed=false`) and candidate failure script.
 
 ## 11) Performance & Virtualization
+
 - ⬜️ Explore grid virtualization via TanStack Virtual (overscan=6).
 - ⬜️ Lazy image loading and blurhash placeholder + fade-in.
 - ⬜️ Cache-control behaviors for receipt immutable caching.
-- ⬜️ Prefetch receipt data on hover (React Query). 
+- ⬜️ Prefetch receipt data on hover (React Query).
 
 ## 12) Accessibility & UX
+
 - ✅ Toast uses `aria-live=polite`.
 - 🟨 Hotkeys
   - ✅ Placeholder hook exists.
@@ -168,13 +180,15 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
 - ⬜️ Form validation patterns (inline error states + summary).
 
 ## 13) Testing
+
 - ⬜️ Unit tests for run reducer and candidate transitions.
 - ⬜️ Integration tests for create flow with mocks.
 - ⬜️ E2E tests for explore virtualization and compare mode switching.
 - ⬜️ Accessibility smoke tests (axe/playwright).
 
 ## 14) Documentation & Ops
-- ⬜️ README with local dev instructions.
-- ⬜️ Environment flags (`NEXT_PUBLIC_USE_MOCKS`) usage documented.
+
+- ✅ README with local dev instructions.
+- ✅ Environment flags (`NEXT_PUBLIC_USE_MOCKS`) usage documented.
 - ⬜️ CSP guidance for artifact domains.
-- ⬜️ API mocking guide (what endpoints exist + payloads).
+- ✅ API mocking guide (what endpoints exist + payloads).
