@@ -44,8 +44,8 @@ export default function ExplorePage() {
       <FilterBar filters={filters} onChange={setFilters} />
       {items.length === 0 ? (
         <div className="flex flex-col items-center justify-center rounded-panel border border-border bg-surface p-12 text-center">
-          <div className="text-2xl text-secondary mb-2">No receipts found</div>
-          <p className="text-sm text-secondary mb-4">
+          <div className="mb-2 text-2xl text-secondary">No receipts found</div>
+          <p className="mb-4 text-sm text-secondary">
             {hasFilters
               ? 'Try adjusting your filters to see more results.'
               : 'No receipts available at the moment.'}
