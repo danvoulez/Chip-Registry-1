@@ -3,7 +3,15 @@
 import { useState } from 'react';
 import type { ReceiptExpanded } from '@/lib/types';
 
-export default function OutputDiff({ left, right, mode }: { left: ReceiptExpanded; right: ReceiptExpanded; mode: string }) {
+export default function OutputDiff({
+  left,
+  right,
+  mode
+}: {
+  left: ReceiptExpanded;
+  right: ReceiptExpanded;
+  mode: string;
+}) {
   const [activeMode, setActiveMode] = useState(mode);
   return (
     <div className="rounded-panel border border-border bg-surface p-4">
@@ -23,7 +31,8 @@ export default function OutputDiff({ left, right, mode }: { left: ReceiptExpande
         </div>
       </div>
       <div className="mt-4 text-xs text-secondary">
-        Mode: {activeMode}. Left outputs CID {left.outputs_cid}. Right outputs CID {right.outputs_cid}.
+        Mode: {activeMode}. Left outputs CID {left.outputs_cid}. Right outputs CID{' '}
+        {right.outputs_cid}.
       </div>
     </div>
   );

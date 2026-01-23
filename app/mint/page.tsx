@@ -8,8 +8,14 @@ const steps = ['Bundle', 'Manifest', 'Fixed-Point', 'Conference', 'Sign', 'Publi
 
 export default function MintPage() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [chipManifest, setChipManifest] = useState({ name: 'Chip Alpha', version: '1.0.0' });
-  const [formulaManifest, setFormulaManifest] = useState({ name: 'Formula Beta', version: '1.0.0' });
+  const [chipManifest, setChipManifest] = useState<Record<string, unknown>>({
+    name: 'Chip Alpha',
+    version: '1.0.0'
+  });
+  const [formulaManifest, setFormulaManifest] = useState<Record<string, unknown>>({
+    name: 'Formula Beta',
+    version: '1.0.0'
+  });
 
   return (
     <div className="space-y-6">

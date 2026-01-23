@@ -25,17 +25,25 @@ export default function ManifestEditor({
       <div className="mt-4 grid gap-4 md:grid-cols-2">
         <textarea
           value={JSON.stringify(chip_manifest, null, 2)}
-          onChange={(event) => onChange({ chip: JSON.parse(event.target.value || '{}'), formula: formula_manifest })}
+          onChange={(event) =>
+            onChange({ chip: JSON.parse(event.target.value || '{}'), formula: formula_manifest })
+          }
           className="min-h-[180px] rounded-card border border-border bg-transparent p-3 font-mono text-xs text-secondary"
         />
         <textarea
           value={JSON.stringify(formula_manifest, null, 2)}
-          onChange={(event) => onChange({ chip: chip_manifest, formula: JSON.parse(event.target.value || '{}') })}
+          onChange={(event) =>
+            onChange({ chip: chip_manifest, formula: JSON.parse(event.target.value || '{}') })
+          }
           className="min-h-[180px] rounded-card border border-border bg-transparent p-3 font-mono text-xs text-secondary"
         />
       </div>
       <div className="mt-4 text-xs">
-        <button type="button" onClick={onValidate} className="rounded-button border border-proof px-3 py-2 text-proof">
+        <button
+          type="button"
+          onClick={onValidate}
+          className="rounded-button border border-proof px-3 py-2 text-proof"
+        >
           Validate
         </button>
       </div>

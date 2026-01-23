@@ -29,10 +29,18 @@ export default function StepWizard({
         ))}
       </div>
       <div className="mt-4 flex gap-2 text-xs">
-        <button type="button" onClick={onBack} className="rounded-button border border-border px-3 py-2">
+        <button
+          type="button"
+          onClick={onBack}
+          className="rounded-button border border-border px-3 py-2"
+        >
           Back
         </button>
-        <button type="button" onClick={onNext} className="rounded-button border border-proof px-3 py-2 text-proof">
+        <button
+          type="button"
+          onClick={onNext}
+          className="rounded-button border border-proof px-3 py-2 text-proof"
+        >
           Next
         </button>
       </div>

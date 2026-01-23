@@ -1,4 +1,10 @@
-import type { CandidateViewModel, CidStr, ReceiptExpanded, WorldSummary, ChipSummary } from '@/lib/types';
+import type {
+  CandidateViewModel,
+  CidStr,
+  ReceiptExpanded,
+  WorldSummary,
+  ChipSummary
+} from '@/lib/types';
 
 const makeCid = (seed: string): CidStr => `b3:${seed}` as CidStr;
 

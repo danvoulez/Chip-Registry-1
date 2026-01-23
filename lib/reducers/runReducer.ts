@@ -55,7 +55,8 @@ export const applyRunEvent = (state: RunState, event: RunEvent): RunState => {
       };
       candidate.metrics.runtime_ms = payload.runtime_ms_so_far ?? candidate.metrics.runtime_ms;
       candidate.metrics.peak_ram_mb = payload.peak_ram_mb_so_far ?? candidate.metrics.peak_ram_mb;
-      candidate.metrics.cost_credits = payload.cost_credits_so_far ?? candidate.metrics.cost_credits;
+      candidate.metrics.cost_credits =
+        payload.cost_credits_so_far ?? candidate.metrics.cost_credits;
     });
   }
 

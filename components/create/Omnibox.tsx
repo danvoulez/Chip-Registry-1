@@ -36,7 +36,13 @@ export default function Omnibox() {
   const handlePlan = async () => {
     const response = await apiFetch<PlanResponse>('/api/mock/runs/plan', {
       method: 'POST',
-      body: JSON.stringify({ chip_ref: chipRef, formula_ref: formulaRef, world_id: worldId, mode, theme })
+      body: JSON.stringify({
+        chip_ref: chipRef,
+        formula_ref: formulaRef,
+        world_id: worldId,
+        mode,
+        theme
+      })
     });
     setGateDenied(response.gate.allowed ? null : response.gate);
     setPlannedRun(response.run_plan_cid);
@@ -123,7 +129,11 @@ export default function Omnibox() {
           Gate denied: {gateDenied.reason}
           {gateDenied.decision_cid ? (
             <div className="mt-2">
-              <CidPill label="Decision" cid={gateDenied.decision_cid as `b3:${string}`} variant="warn" />
+              <CidPill
+                label="Decision"
+                cid={gateDenied.decision_cid as `b3:${string}`}
+                variant="warn"
+              />
             </div>
           ) : null}
         </div>

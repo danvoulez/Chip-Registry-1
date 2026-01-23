@@ -25,6 +25,8 @@ export default function SplitButton({
         type="button"
         className="rounded-r-button border border-border bg-surface px-2 text-xs"
         onClick={() => setOpen((prev) => !prev)}
+        aria-label={`Show ${label} options`}
+        aria-expanded={open}
       >
         ▾
       </button>

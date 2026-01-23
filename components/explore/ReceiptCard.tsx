@@ -28,20 +28,40 @@ export default function ReceiptCard({
       <ReceiptViz src={viz_url} blurhash={blurhash} alt="Receipt preview" />
       <div className="mt-3 flex items-center justify-between">
         <CidPill label="Receipt" cid={receipt_cid as `b3:${string}`} />
-        {badges.verified ? <StatusBadge status="done" /> : <StatusBadge status="failed" tone="muted" />}
+        {badges.verified ? (
+          <StatusBadge status="done" />
+        ) : (
+          <StatusBadge status="failed" tone="muted" />
+        )}
       </div>
       <div className="mt-2 text-xs text-secondary">Grade {badges.grade ?? '—'}</div>
       <div className="mt-3 flex flex-wrap gap-2 text-xs">
-        <button type="button" onClick={onOpen} className="rounded-button border border-border px-2 py-1">
+        <button
+          type="button"
+          onClick={onOpen}
+          className="rounded-button border border-border px-2 py-1"
+        >
           Open
         </button>
-        <button type="button" onClick={onCompare} className="rounded-button border border-border px-2 py-1">
+        <button
+          type="button"
+          onClick={onCompare}
+          className="rounded-button border border-border px-2 py-1"
+        >
           Compare
         </button>
-        <button type="button" onClick={onReplay} className="rounded-button border border-border px-2 py-1">
+        <button
+          type="button"
+          onClick={onReplay}
+          className="rounded-button border border-border px-2 py-1"
+        >
           Replay
         </button>
-        <button type="button" onClick={onFavorite} className="rounded-button border border-border px-2 py-1">
+        <button
+          type="button"
+          onClick={onFavorite}
+          className="rounded-button border border-border px-2 py-1"
+        >
           Favorite
         </button>
       </div>

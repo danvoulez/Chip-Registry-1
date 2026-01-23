@@ -1,6 +1,7 @@
 import { buildMockRunEvents } from '@/lib/mocks/mockServer';
 
-export async function GET(request: Request, { params }: { params: { runId: string } }) {
+export async function GET(request: Request, context: { params: Promise<{ runId: string }> }) {
+  const params = await context.params;
   const encoder = new TextEncoder();
   const events = buildMockRunEvents(params.runId);
 

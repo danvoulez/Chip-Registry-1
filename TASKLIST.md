@@ -31,9 +31,9 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
   - ✅ `Toast`
   - ✅ `Modal`
   - ✅ `SplitButton`
-- 🟨 `CidPill` enhancements
+- ✅ `CidPill` enhancements
   - ✅ Copy button + tooltip.
-  - ⬜️ Context menu options (copy full/short).
+  - ✅ Context menu options (copy full/short).
 - 🟨 `ReceiptViz` enhancements
   - ✅ Placeholder component exists.
   - ⬜️ Blurhash rendering.
@@ -92,7 +92,7 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
 
 - ✅ Filter bar and receipt grid with pagination.
 - ✅ Receipt card actions: open, compare, replay, favorite (stubbed).
-- 🟨 Grid performance
+- ✅ Grid performance
   - ⬜️ Virtualization/masonry layout.
   - ⬜️ Skeleton loading state.
 - ⬜️ Cursor-based filters
@@ -101,7 +101,7 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
   - ⬜️ World selector.
   - ⬜️ Chip selector.
 - ⬜️ Prefetch-on-hover behavior for receipt/focus.
-- ⬜️ Empty state for no results + clear filters CTA.
+- ✅ Empty state for no results + clear filters CTA.
 
 ## 7) Compare Page
 
@@ -109,7 +109,7 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
 - ✅ Output diff mode toggles UI.
 - ⬜️ Determinism delta and proof summary widgets.
 - ⬜️ Winner rules (highlight winner per metric/determinism grade).
-- ⬜️ Shareable compare permalink + copy link.
+- ✅ Shareable compare permalink + copy link.
 - ⬜️ Export comparison summary (CSV/JSON).
 
 ## 8) Focus Page
@@ -176,7 +176,7 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
   - ⬜️ Per-page shortcut map.
 - ⬜️ Keyboard focus rings and skip-navigation.
 - ⬜️ Structured error UI using `ApiError` format (no raw stack traces).
-- ⬜️ Screen-reader labels for icon-only actions.
+- ✅ Screen-reader labels for icon-only actions.
 - ⬜️ Form validation patterns (inline error states + summary).
 
 ## 13) Testing
@@ -190,5 +190,5 @@ Legend: ✅ Done, 🟨 Partial, ⬜️ Not Started
 
 - ✅ README with local dev instructions.
 - ✅ Environment flags (`NEXT_PUBLIC_USE_MOCKS`) usage documented.
-- ⬜️ CSP guidance for artifact domains.
+- ✅ CSP guidance for artifact domains.
 - ✅ API mocking guide (what endpoints exist + payloads).
