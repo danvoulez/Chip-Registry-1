@@ -5,7 +5,13 @@ export interface ProgressLine {
   text: string;
 }
 
-export default function ProgressLines({ lines, max_lines = 6 }: { lines: ProgressLine[]; max_lines?: number }) {
+export default function ProgressLines({
+  lines,
+  max_lines = 6
+}: {
+  lines: ProgressLine[];
+  max_lines?: number;
+}) {
   return (
     <ul className="space-y-1 text-xs text-secondary">
       {lines.slice(0, max_lines).map((line, index) => (

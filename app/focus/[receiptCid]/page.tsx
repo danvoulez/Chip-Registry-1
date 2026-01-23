@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { use, useState } from 'react';
 import { useReceipt } from '@/hooks/useReceipt';
 import ReceiptViz from '@/components/ui/ReceiptViz';
 import MetricsStrip from '@/components/ui/MetricsStrip';
@@ -9,8 +9,9 @@ import InspectorDrawer from '@/components/layout/InspectorDrawer';
 import { formatMs } from '@/lib/utils/time';
 import { formatNumber } from '@/lib/utils/format';
 
-export default function FocusPage({ params }: { params: { receiptCid: string } }) {
-  const { data } = useReceipt(params.receiptCid);
+export default function FocusPage({ params }: { params: Promise<{ receiptCid: string }> }) {
+  const { receiptCid } = use(params);
+  const { data } = useReceipt(receiptCid);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('Receipt');
 
@@ -22,7 +23,11 @@ export default function FocusPage({ params }: { params: { receiptCid: string } }
 
   return (
     <div className="space-y-6">
-      <ReceiptViz src={data?.receipt_viz?.url ?? null} blurhash={data?.receipt_viz?.blurhash ?? null} alt="Receipt" />
+      <ReceiptViz
+        src={data?.receipt_viz?.url ?? null}
+        blurhash={data?.receipt_viz?.blurhash ?? null}
+        alt="Receipt"
+      />
       <div className="flex flex-wrap gap-2">
         <CidPill label="Chip" cid={receipt.chip_cid} />
         <CidPill label="Formula" cid={receipt.formula_cid} />

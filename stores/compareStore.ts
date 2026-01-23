@@ -9,14 +9,16 @@ interface CompareState {
   setPrimaryPair: (left: CidStr, right: CidStr) => void;
 }
 
-export const useCompareStore = create<CompareState>((set, get) => ({
+export const useCompareStore = create<CompareState>((set) => ({
   selected_receipt_cids: [],
   max_selected: 4,
   toggle: (cid) =>
     set((state) => {
       const exists = state.selected_receipt_cids.includes(cid);
       if (exists) {
-        return { selected_receipt_cids: state.selected_receipt_cids.filter((item) => item !== cid) };
+        return {
+          selected_receipt_cids: state.selected_receipt_cids.filter((item) => item !== cid)
+        };
       }
       if (state.selected_receipt_cids.length >= state.max_selected) return state;
       return { selected_receipt_cids: [...state.selected_receipt_cids, cid] };

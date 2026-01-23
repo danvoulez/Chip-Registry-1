@@ -25,7 +25,9 @@ export default function Sidebar() {
             href={item.route}
             className={clsx(
               'rounded-button px-3 py-2 text-sm transition',
-              pathname === item.route ? 'bg-surface-hover text-primary' : 'text-secondary hover:bg-surface-hover'
+              pathname === item.route
+                ? 'bg-surface-hover text-primary'
+                : 'text-secondary hover:bg-surface-hover'
             )}
           >
             {item.label}

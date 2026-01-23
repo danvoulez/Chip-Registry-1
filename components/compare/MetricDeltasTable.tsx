@@ -9,9 +9,24 @@ export default function MetricDeltasTable({
   right: ReceiptExpanded;
 }) {
   const rows = [
-    { label: 'Runtime', left: left.metrics.runtime_ms, right: right.metrics.runtime_ms, better: 'lower' },
-    { label: 'Cost', left: left.metrics.cost_credits, right: right.metrics.cost_credits, better: 'lower' },
-    { label: 'RAM', left: left.metrics.peak_ram_mb, right: right.metrics.peak_ram_mb, better: 'lower' }
+    {
+      label: 'Runtime',
+      left: left.metrics.runtime_ms,
+      right: right.metrics.runtime_ms,
+      better: 'lower'
+    },
+    {
+      label: 'Cost',
+      left: left.metrics.cost_credits,
+      right: right.metrics.cost_credits,
+      better: 'lower'
+    },
+    {
+      label: 'RAM',
+      left: left.metrics.peak_ram_mb,
+      right: right.metrics.peak_ram_mb,
+      better: 'lower'
+    }
   ];
   return (
     <table className="w-full text-xs text-secondary">
